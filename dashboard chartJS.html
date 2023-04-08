@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard CHART JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    const ctx = document.getElementById('myChart');
+    let chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: 'Sensor_Tmperatura_1_°C',
+                data: [23, 23, 22, 25]
+            },
+            {
+                label: 'Sensor_Temperatura_2_°C',
+                data: [24, 23, 24, 26]
+            },
+            {
+                label: 'Sensor_Temperatura_3_°C',
+                data: [24, 18, 17, 12]
+            },
+            {
+                label: 'Sensor_Umidade_1_%',
+                data: [60, 62, 61, 60]
+            },
+            {
+                label: 'Sensor_Umidade_2_%',
+                data: [34, 44, 42, 44]
+            },
+            {
+                label: 'Sensor_Umidade_3_%',
+                data: [23, 23, 22, 25]
+            }],
+
+            labels: ['12:00', '12:15', '12:30', '13:00']
+        },
+        options: {
+            scales: {
+                y: {
+                    suggestedMin: 10,
+                    suggestedMax: 100
+                }
+            }
+        }
+    });
+
+</script>
